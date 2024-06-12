@@ -21,5 +21,26 @@
   - 80
   - Target Group
 - Create Load Balancer.
+## Create SSL Certificate From ACM:
+- Rquest Cetificate.
+- Add Domains:
+  - domain.com
+  - *.domain.com
+- View Certificate -> Copy `cname` records and edit it to your DNS Management from domain provider.
 ## HTTPS Listner Creation:
-- 
+- Listener Configuration:
+  - Protocol: HTTPS
+  - Port: 443
+- Target Group:
+- Certificate: From ACM.
+## Redirect HTTP to HTTPS.
+- Edit HTTP listener
+  - Change Routing action: Redirect to URL
+  - Protocol: HTTPS
+  - Port: 443
+  - Status Code: 301 (permenetly moved)
+## Domain Set up:
+- Copy DNS of Application Load Balancer.
+- Modify DNS Records.
+- `CNAME` : `subdomain` : `alb.domain`
+### Now you have completly set up HTTPS with Application Load Balancer.
