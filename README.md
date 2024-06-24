@@ -9,6 +9,7 @@
 - IP Type: IPv4
 - Protocol Version: HTTP1
 - Add instances to list on next page.
+- For healthchecks, you are creating https listeners so keep healthcheck protocol: **HTTPS**, Path: path where you want to check for 200 status code.
 ## Application Load Balancer:
 - Name.
 - Scheme: Internet-Facing.
